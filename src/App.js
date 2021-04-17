@@ -37,11 +37,11 @@ storeCollector(){
 login(){
     
     let info = {
-      "username": `${this.state.username}`,
+      "email": `${this.state.username}`,
       "password": `${this.state.password}`
     }
     console.log(info);
-    fetch('http://127.0.0.1:8000/api/login/',{
+    fetch('http://localhost:8000/v1/users/token/',{
 
         method: "POST",
 
@@ -67,16 +67,28 @@ login(){
 
   hello(){
      console.log(this.state.store.token);
+     
     let token = "Token " + this.state.store.token;
     console.log(token);
-    fetch('http://127.0.0.1:8000/hello/',{
+    let payload = {
+        "name": "new34",
+        "description": "sss",
+        "status": 1,
+        "qty": 234,
+        "price": 4567,
+        "category": 1,
+        "store":2,
+    }
 
-        method: "GET",
+    fetch('http://localhost:8000/v1/products/',{
+
+        method: "POST",
 
         headers: { 
         "Content-type": "application/json",
         "Authorization": token
-          }
+          },
+        body: JSON.stringify(payload)
 
       }).then((res)=>{
         res.json().then((result)=>{
