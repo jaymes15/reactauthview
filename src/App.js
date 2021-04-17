@@ -41,7 +41,7 @@ login(){
       "password": `${this.state.password}`
     }
     console.log(info);
-    fetch('http://api.http://api.farmz2u.co/v1/users/token/',{
+    fetch('http://api.farmz2u.co/v1/users/token/',{
 
         method: "POST",
 
@@ -80,7 +80,7 @@ login(){
         "store":2,
     }
 
-    fetch('http://api.http://api.farmz2u.co/v1/products/',{
+    fetch('http://api.farmz2u.co/v1/products/',{
 
         method: "POST",
 
